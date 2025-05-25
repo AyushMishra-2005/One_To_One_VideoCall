@@ -1,0 +1,5 @@
+node_modules/
+server/node_modules/
+videoCall/node_modules/
+
+.env
