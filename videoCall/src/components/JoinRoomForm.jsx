@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from 'axios';
+import server from '../environment.js'
 
 
 import {
@@ -26,7 +27,7 @@ function JoinRoomForm({ onJoin }) {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/generate-token",
+        `${server}/generate-token`,
         {
           channelName: roomId,
           uid

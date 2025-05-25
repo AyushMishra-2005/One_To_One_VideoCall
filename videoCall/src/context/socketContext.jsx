@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { createContext, useContext } from 'react'
 import { io } from 'socket.io-client'
 import { v4 as uuidv4 } from 'uuid';
+import server from '../environment.js'
 
 const socketContext = createContext();
 
@@ -17,7 +18,7 @@ export const SocketProvider = ({ children }) => {
       localStorage.setItem('userId', userId);
     }
 
-    const newSocket = io('http://localhost:5000', {
+    const newSocket = io(`${server}`, {
       query: { userId }
     });
 
